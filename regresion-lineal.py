@@ -11,7 +11,7 @@ from random import seed
 #Import Dataset from CSV
 def load_csv(filename):
     dataset = list() #Initialize
-    with open(filename, 'r') as file:
+    with open(filename, 'r', encoding='utf-8-sig') as file:#Needed the encoding for some strange UTF reason.
         csv = reader(file)
         for row in csv: #Add row 1 by 1
             if not row:   #If the row is empty, skip it.
